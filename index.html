@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/assets/css/style.css" reportloaderror="" />
+  </head>
+  <body>
+    <div class="page">
+      <div id="about">
+        <div id="about-container">
+          <div id="desc">
+            <h1>{{ metadata.title }}</h1>
+            {% for line in metadata.desc %}
+            <p>{{ line }}</p>
+            {% endfor %}
+          </div>
+          <div id="links">
+            {% for link in metadata.links %}
+            <div class="link">
+              <a href="{{ link.value }}"> <img src="{{ link.icon }}" /> </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div id="img">
+          <img src="{{ metadata.avatar }}" />
+        </div>
+      </div>
+      {% for section in metadata.sections %}
+      <div class="section" id="{{ section.id }}">
+        <h1>{{ section.name }}</h1>
+        <div class="section-container">
+          {% for item in sections[section.name] %}
+          <div id="{{ item.id }}">
+            <a href="{{ item.url }}" class="card">
+              <div class="card-title">{{ item.title }}</div>
+              <div class="card-description">{{ item.desc }}</div>
+            </a>
+          </div>
+          {% endfor %}
+          <div id="">
+            <a href="{{ section.more }}" class="card">
+              <div class="card-title">More</div>
+              <div class="card-description"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>

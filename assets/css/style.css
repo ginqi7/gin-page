@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Noto+Serif+TC:wght@200..900&display=swap");
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Alegreya";
+  font-size: 20px;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  padding-bottom: 60px;
+}
+
+#about {
+  width: 1000px;
+  height: 500px;
+  display: flex;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+.section-container {
+  display: grid;
+  /*
+   * This is the core of responsive layout:
+   *   - auto-fit: Automatically calculates how many columns fit in a row.
+   *   - minmax(320px, 1fr): Each column has a minimum width of 320px and a maximum width of 1fr (proportional to the remaining space).
+   * Effect: When the screen width is sufficient, it automatically creates multiple columns; when the width is insufficient, the number of columns decreases automatically until it becomes a single column.
+ */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 24px;
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#img img {
+  width: 400px;
+  height: 400px;
+}
+
+#about-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#links {
+  display: flex;
+  gap: 24px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 100%;
+  padding: 24px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: #2d3748;
+  transition:
+    transform 0.2s ease-out,
+    box-shadow 0.2s ease-out;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600;
+}
+
+.card-description {
+  margin: 0 0 16px 0;
+  color: #718096;
+  font-size: 1rem;
+}

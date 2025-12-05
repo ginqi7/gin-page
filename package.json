@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "prebuild": "./fetch.rb",
+    "build": "eleventy",
+    "preserve": "./fetch.rb",
+    "serve": "eleventy --serve",
+    "start": "npm run serve"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}
