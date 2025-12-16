@@ -18,55 +18,5 @@
       "value": "ginqi7@gmail.com"
     }
   ],
-  "sections": [
-    {
-      "id": "section-articles",
-      "name": "Articles",
-      "url": "https://qiqijin.com/archive/",
-      "more": "https://qiqijin.com/archive/",
-      "match": ".title-item",
-      "properties": {
-        "title": ["a", "text"],
-        "url": ["a", "url"]
-      }
-    },
-    {
-      "id": "section-books",
-      "name": "Books",
-      "url": "https://qiqijin.com/books/",
-      "more": "https://qiqijin.com/books/",
-      "match": ".library__book",
-      "properties": {
-        "title": [".book-title", "text"],
-        "url": ["a", "url"]
-      }
-    },
-    {
-      "id": "section-videos",
-      "name": "Videos",
-      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCGj1W9Z3iBsutpzH5dGQRiA",
-      "more": "https://www.youtube.com/channel/UCGj1W9Z3iBsutpzH5dGQRiA",
-      "match": "entry",
-      "properties": {
-        "title": ["title", "text"],
-        "url": ["link", "url"]
-      }
-    },
-    {
-      "id": "section-books",
-      "name": "Thoughts"
-    },
-    {
-      "id": "section-projects",
-      "name": "Projects",
-      "url": "https://github.com/ginqi7?tab=repositories&q=&type=&language=&sort=stargazers",
-      "more": "https://github.com/ginqi7",
-      "match": ".source",
-      "properties": {
-        "title": [".wb-break-all a", "text"],
-        "url": [".wb-break-all a", "url"],
-        "desc": ["[itemprop=\"description\"]", "text"]
-      }
-    }
-  ]
+  "sections": []
 }
