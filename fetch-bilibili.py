@@ -1,12 +1,12 @@
 # /// script
 # dependencies = [
-#   "bilibili-api-python",
-# "curl_cffi",
+#   "bilibili-api-python>=v17.4.0",
+#   "curl_cffi",
 # ]
 # ///
 import asyncio
 from sys import argv
-from bilibili_api import user, sync
+from bilibili_api import user, sync, request_settings
 
 
 async def get_user_videos(uid, limit_n=10):
@@ -16,6 +16,7 @@ async def get_user_videos(uid, limit_n=10):
     :param limit_n: 需获的视频数
     """
     # 实例化用户对象
+    request_settings.set("impersonate", "chrome131")
     u = user.User(uid)
 
     video_list = []
