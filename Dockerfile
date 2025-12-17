@@ -7,17 +7,8 @@ WORKDIR /app
 # Copy the project's package.json and package-lock.json
 COPY package*.json ./
 
-COPY pyproject.toml ./
-
-
 # Install Project Dependencies
 RUN npm install
-
-# Install uv
-RUN apk add uv
-
-RUN uv sync
-
 
 # Install ruby
 RUN apk add --no-cache build-base ruby-dev

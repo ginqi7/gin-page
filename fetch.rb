@@ -54,16 +54,7 @@ class WebScraper
     end
   end
 
-  def fetch_bilibli(user_id)
-    puts 'Fetch Bilibili'
-    data = `uv run fetch-bilibili.py #{user_id}`.gsub!('\'', '"')
-    puts data
-    JSON.parse(data)
-  end
-
   def fetch(section)
-    return fetch_bilibli(section['userID']) if section['type'] == 'bilibli'
-
     url = section['url']
     return nil unless url
 
