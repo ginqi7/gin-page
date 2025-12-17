@@ -1,10 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Noto+Serif+TC:wght@200..900&display=swap");
-
 body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Alegreya";
+  font-family: "Alegreya", jinkaiFont;
   font-size: 20px;
 }
 
