@@ -23,7 +23,7 @@ class WebScraper
   end
 
   def run
-    Dir.glob('./_data/sections/*').each { |f| File.delete(f) if File.file?(f) }
+    # Dir.glob('./_data/sections/*').each { |f| File.delete(f) if File.file?(f) }
     hash = {}
     results = @config['sections'].filter_map do |section|
       data = fetch(section)
@@ -32,6 +32,7 @@ class WebScraper
     print(results)
     print_results(hash)
     hash.each do |key, value|
+      File.delete("./_data/sections/#{key}.json") if File.file?("./_data/sections/#{key}.json")
       File.write("./_data/sections/#{key}.json", JSON.pretty_generate(value))
     end
   end
