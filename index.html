@@ -32,12 +32,10 @@
         <h1>{{ section.name }}</h1>
         <div class="section-container">
           {% for item in sections[section.name] %}
-          <div id="{{ item.id }}">
-            <a href="{{ item.url }}" class="card">
-              <div class="card-title">{{ item.title }}</div>
-              <div class="card-description">{{ item.desc }}</div>
-            </a>
-          </div>
+          <a href="{{ item.url }}" class="card">
+            <div class="card-title">{{ item.title }}</div>
+            <div class="card-description">{{ item.desc }}</div>
+          </a>
           {% endfor %}
           <div id="">
             <a href="{{ section.more }}" class="card">
@@ -48,6 +46,12 @@
         </div>
       </div>
       {% endfor %}
+      <footer>
+        <div class="footer-line"></div>
+        <div>
+          <small>© Copyright {{ currentYear }}, {{ metadata.author }} </small>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

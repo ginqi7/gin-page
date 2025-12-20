@@ -3,11 +3,5 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets/*");
   eleventyConfig.addPassthroughCopy("assets/**/*");
   eleventyConfig.addPassthroughCopy("*.png");
-
-  var createbookBase = "/";
-  if (process.env.CREATEBOOK_BASE) {
-    createbookBase = process.env.CREATEBOOK_BASE;
-  }
-
-  eleventyConfig.addGlobalData("createbookBase", createbookBase);
+  eleventyConfig.addGlobalData("currentYear", new Date().getFullYear());
 }
