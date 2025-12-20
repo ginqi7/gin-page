@@ -3,5 +3,6 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets/*");
   eleventyConfig.addPassthroughCopy("assets/**/*");
   eleventyConfig.addPassthroughCopy("*.png");
+  eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addGlobalData("currentYear", new Date().getFullYear());
 }
