@@ -67,7 +67,7 @@ class WebScraper
       extract_properties(page, element, section['properties'])
     end
   rescue StandardError => e
-    error "Error occurred while retrieving '#{section['name']}': #{e.message}"
+    puts "Warning occurred while retrieving '#{section['name']}': #{e.message}"
     nil
   end
 
