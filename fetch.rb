@@ -4,6 +4,7 @@
 require 'json'
 require 'yaml'
 require 'mechanize'
+require 'fileutils'
 
 class WebScraper
   COMMANDS = {
@@ -31,9 +32,11 @@ class WebScraper
     end
     print(results)
     print_results(hash)
+    output_dir = './_data/sections'
+    FileUtils.mkdir_p(output_dir)
     hash.each do |key, value|
-      File.delete("./_data/sections/#{key}.json") if File.file?("./_data/sections/#{key}.json")
-      File.write("./_data/sections/#{key}.json", JSON.pretty_generate(value))
+      File.delete("#{output_dir}/#{key}.json") if File.file?("#{output_dir}/#{key}.json")
+      File.write("#{output_dir}/#{key}.json", JSON.pretty_generate(value))
     end
   end
 
